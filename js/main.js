@@ -3,8 +3,17 @@ var page = document.querySelector('.page');
 var navigationMenu = document.querySelector('.main-navigation');
 var navToggle = navigationMenu.querySelector('.main-navigation__toggle');
 var telInput = document.querySelector('#tel-input');
+var nameInput = document.querySelector('#name-input');
+var contactsSubmitButton = document.querySelector('#contacts-submit');
 var inputErrorColor = '#ff0001';
 var inputErrorMessage = 'Номер телефона должен содержать цифры';
+
+// Сохранение в Local Storage
+
+contactsSubmitButton.addEventListener('click', function () {
+  localStorage.setItem(telInput.name, telInput.value);
+  localStorage.setItem(nameInput.name, nameInput.value);
+});
 
 // Меню-бургер
 navigationMenu.classList.remove('main-navigation--nojs');
